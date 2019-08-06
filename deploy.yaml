@@ -14,13 +14,13 @@ spec:
       labels:
         app: simple-node
     spec:
+      ImagePullSecrets:
+      - name: acr-key
       containers:
       - name: simple-node
         image: grahamrepo.azurecr.io/kubernetesgraham:latest
         ports:
         - containerPort: 9000
-      ImagePullSecrets:
-      - name: acr-key
 ---
 apiVersion: v1
 kind: Service
