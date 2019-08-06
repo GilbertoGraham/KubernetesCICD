@@ -15,7 +15,7 @@ spec:
         app: simple-node
     spec:
       ImagePullSecrets:
-      - name: acr-key
+      - name: acr-keyy
       containers:
       - name: simple-node
         image: grahamrepo.azurecr.io/kubernetesgraham:latest
