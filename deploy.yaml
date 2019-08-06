@@ -1,12 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-node-deployment
+  labels:
+    app: simple-node
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: simple-node
+  template:
+    metadata:
+      labels:
+        app: simple-node
+    spec:
+      containers:
+      - name: simple-node
+        image: grahamrepo.azurecr.io/gilbertograham/simplenode
+        ports:
+        - containerPort: 9000
+---
 apiVersion: v1
-kind: Pod
+kind: Service
 metadata:
   name: simple-node
-  labels:
-    name: simple-node
 spec:
-  containers:
-  - name: simple-node
-    image: grahamrepo.azurecr.io/gilbertograham/simplenode
-    ports:
-    - containerPort: 9000
+  selector:
+    app: simple-node
+  ports:
+  - protocol: TCP
+    port: 9000
+    targetPort: 9000
