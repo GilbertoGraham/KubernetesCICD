@@ -19,6 +19,8 @@ spec:
         image: grahamrepo.azurecr.io/kubernetesgraham:latest
         ports:
         - containerPort: 9000
+      ImagePullSecrets:
+      - name: acr-key
 ---
 apiVersion: v1
 kind: Service
