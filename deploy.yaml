@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-node
+  labels:
+    name: simple-node
+spec:
+  containers:
+  - name: simple-node
+    image: grahamrepo.azurecr.io/gilbertograham/simplenode
+    ports:
+    - containerPort: 9000
