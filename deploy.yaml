@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: simple-node
-        image: grahamrepo.azurecr.io/gilbertograham/simplenode
+        image: grahamrepo.azurecr.io/kubernetesgraham:latest
         ports:
         - containerPort: 9000
 ---
