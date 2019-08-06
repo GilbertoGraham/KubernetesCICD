@@ -28,6 +28,7 @@ kind: Service
 metadata:
   name: simple-node
 spec:
+  type: LoadBalancer
   selector:
     app: simple-node
   ports:
