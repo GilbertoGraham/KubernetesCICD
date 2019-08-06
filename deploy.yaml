@@ -15,10 +15,11 @@ spec:
         app: simple-node
     spec:
       ImagePullSecrets:
-      - name: acr-keyy
+      - name: acr-key
       containers:
       - name: simple-node
         image: grahamrepo.azurecr.io/kubernetesgraham:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 9000
 ---
